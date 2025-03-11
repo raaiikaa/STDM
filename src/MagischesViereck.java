@@ -20,6 +20,26 @@ public class MagischesViereck {
         }
     }
 
+    public static int[][] createMagischesViereck(int size){
+        int[][] resultArray = new int[size][size];
+        int[] position = new int[2];
+        int countUp = 1;
+
+        resultArray[0][size/2] = countUp;
+
+        while(countUp <= size * 2){
+            if(position[0] == 0){
+                position[0] = size;
+                position[1] = position[1] + 1;
+            }else if(position[1] == resultArray.length){
+                
+            }
+        }
+
+
+        return resultArray;
+    }
+
     public static boolean isMagic(int[][] mq) {
         boolean isMagic;
         int solution = 0;
