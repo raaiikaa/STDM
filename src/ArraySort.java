@@ -6,7 +6,7 @@ public class ArraySort {
         Generator arrayGenerator = new Generator();
         Printer printer = new Printer();
 
-        int[] randomArray = arrayGenerator.getRandomIntArrayWithSize(10);
+        int[] randomArray = arrayGenerator.getRandomIntArrayWithSize(10, 1000);
         printer.printIntArray(randomArray);
 
         System.out.println("");
