@@ -1,3 +1,5 @@
+package ArraySorting;
+
 import GeneratorAndPrinter.Generator;
 import GeneratorAndPrinter.Printer;
 
@@ -10,7 +12,7 @@ public class NeuerSort {
         Generator arrayGenerator = new Generator();
         Printer arrayPrinter = new Printer();
 
-        int[] randomArray = arrayGenerator.getRandomIntArrayWithSize(10, );
+        int[] randomArray = arrayGenerator.getRandomIntArrayWithSize(10, 100);
         arrayPrinter.printIntArray(randomArray);
 
         System.out.println();
@@ -23,7 +25,7 @@ public class NeuerSort {
         int cache;
         int[] sortedArray = array;
 
-        findSmallestNumber();
+        //findSmallestNumber();
 
         for(int i=1; i< sortedArray.length; i++){
 

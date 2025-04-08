@@ -1,3 +1,5 @@
+package ArraySorting;
+
 import GeneratorAndPrinter.Generator;
 import GeneratorAndPrinter.Printer;
 
