@@ -32,7 +32,7 @@ public class Bruch {
 
         zaehler = zaehler * factor;
 
-        return new Bruch(zaehler, nenner);
+        return kuerze(new Bruch(zaehler, nenner));
     }
 
     public Bruch mult(Bruch factor){
@@ -42,7 +42,7 @@ public class Bruch {
         zaehler = zaehler * factor.getZaehler();
         nenner = nenner * factor.getNenner();
 
-        return new Bruch(zaehler, nenner);
+        return kuerze(new Bruch(zaehler, nenner));
     }
 
     public Bruch add(Bruch factor){
@@ -57,7 +57,7 @@ public class Bruch {
         int zaehlerBruch2 = factor.getZaehler() * (ggT / factor.getNenner());
         int nennerBruch2 = ggT;
 
-        return new Bruch(zaehlerBruch1 + zaehlerBruch2, ggT);
+        return kuerze(new Bruch(zaehlerBruch1 + zaehlerBruch2, ggT));
     }
 
     public Bruch sub(Bruch subtrahend){
@@ -74,7 +74,7 @@ public class Bruch {
 
         int zaehler = zaehlerBruch1 > zaehlerBruch2 ? zaehlerBruch1 - zaehlerBruch2 : zaehlerBruch2 - zaehlerBruch1;
 
-        return new Bruch(zaehler, ggT);
+        return kuerze(new Bruch(zaehler, ggT));
     }
 
 
@@ -102,5 +102,17 @@ public class Bruch {
             }
         }
         return ggT;
+    }
+
+    private static Bruch kuerze(Bruch bruch){
+        int highestDivider = 1;
+
+        for(int i=1; i<20; i++){
+            if(bruch.getNenner() % i == 0 && bruch.getZaehler() % i == 0 ){
+                highestDivider = i;
+            }
+        }
+
+        return new Bruch(bruch.getZaehler() / highestDivider, bruch.getNenner() / highestDivider);
     }
 }
