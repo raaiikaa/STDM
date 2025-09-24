@@ -1,11 +1,11 @@
-package MyArrayList;
+package MyLinkedList;
 
 import org.junit.*;
 
 import static org.junit.Assert.*;
 
 
-public class MyArrayListOGTest {
+public class MyLinkedListOGTest {
 
     @BeforeClass
     public static void setUpClass() {
@@ -23,55 +23,54 @@ public class MyArrayListOGTest {
     public void tearDown() {
     }
 
-//    @Ignore
-	@Test
+    @Test
     public void testNew() {
-        MyArrayListOG mal = new MyArrayListOG();
+        MyLinkedListOG mal = new MyLinkedListOG();
         assertNotNull(mal);
     }
 
-	@Test
+    @Test
     public void testNewAndSize() {
-        MyArrayListOG mal = new MyArrayListOG();
+        MyLinkedListOG mal = new MyLinkedListOG();
         assertEquals(0, mal.size());
     }
 
-	@Test
+    @Test
     public void testAdd1() {
-        MyArrayListOG mal = new MyArrayListOG();
+        MyLinkedListOG mal = new MyLinkedListOG();
         mal.add("eins");
         assertEquals(1, mal.size());
     }
 
-	@Test
+    @Test
     public void testAdd2() {
-        MyArrayListOG mal = new MyArrayListOG();
+        MyLinkedListOG mal = new MyLinkedListOG();
         mal.add("eins");
         assertEquals(1, mal.size());
         mal.add("zwei");
         assertEquals(2, mal.size());
     }
 
-	@Test
+    @Test
     public void testGet1() {
-        MyArrayListOG mal = new MyArrayListOG();
+        MyLinkedListOG mal = new MyLinkedListOG();
         mal.add("eins");
         String res = mal.get(0);
         assertEquals("eins", res);
     }
 
-	@Test
+    @Test
     public void testGet2() {
-        MyArrayListOG mal = new MyArrayListOG();
+        MyLinkedListOG mal = new MyLinkedListOG();
         mal.add("eins");
         mal.add("zwei");
         String res = mal.get(1);
         assertEquals("zwei", res);
     }
 
-	@Test
+    @Test
     public void testGet3() {
-        MyArrayListOG mal = new MyArrayListOG();
+        MyLinkedListOG mal = new MyLinkedListOG();
         mal.add("eins");
         mal.add("zwei");
         mal.add("drei");
@@ -83,20 +82,20 @@ public class MyArrayListOGTest {
         assertEquals("drei", res);
     }
 
-	@Test
+    @Test
     public void testAdd10() {
-        MyArrayListOG mal = new MyArrayListOG();
-        for (int i=0;i<10;i++) {
+        MyLinkedListOG mal = new MyLinkedListOG();
+        for (int i = 0; i < 10; i++) {
             String s = String.format("Element%02d", i);
             mal.add(s);
-            assertEquals(i+1, mal.size());
-            assertEquals(s,mal.get(i));
+            assertEquals(i + 1, mal.size());
+            assertEquals(s, mal.get(i));
         }
     }
 
-	@Test
+    @Test
     public void testAddAtIndex() {
-        MyArrayListOG mal = new MyArrayListOG();
+        MyLinkedListOG mal = new MyLinkedListOG();
         mal.add("eins");
         mal.add("zwei");
         mal.add("drei");
@@ -109,9 +108,9 @@ public class MyArrayListOGTest {
         assertEquals("zwei", res);
     }
 
-	@Test
+    @Test
     public void testAddAtIndex0() {
-        MyArrayListOG mal = new MyArrayListOG();
+        MyLinkedListOG mal = new MyLinkedListOG();
         mal.add("eins");
         mal.add("zwei");
         mal.add("drei");
@@ -125,9 +124,9 @@ public class MyArrayListOGTest {
         assertEquals(4, mal.size());
     }
 
-	@Test
+    @Test
     public void testRemoveHead() {
-        MyArrayListOG mal = new MyArrayListOG();
+        MyLinkedListOG mal = new MyLinkedListOG();
         mal.add("eins");
         mal.add("zwei");
         mal.add("drei");
@@ -138,9 +137,9 @@ public class MyArrayListOGTest {
         assertFalse(mal.contains("eins"));
     }
 
-	@Test
+    @Test
     public void testRemoveTail() {
-        MyArrayListOG mal = new MyArrayListOG();
+        MyLinkedListOG mal = new MyLinkedListOG();
         mal.add("eins");
         mal.add("zwei");
         mal.add("drei");
@@ -150,9 +149,9 @@ public class MyArrayListOGTest {
         assertEquals(2, mal.size());
     }
 
-	@Test
+    @Test
     public void testRemoveIndex1() {
-        MyArrayListOG mal = new MyArrayListOG();
+        MyLinkedListOG mal = new MyLinkedListOG();
         mal.add("eins");
         mal.add("zwei");
         mal.add("drei");
@@ -165,21 +164,22 @@ public class MyArrayListOGTest {
         assertEquals(2, mal.size());
     }
 
-	@Test
+
+    @Test
     public void testRemoveNone() {
-        MyArrayListOG mal = new MyArrayListOG();
+        MyLinkedListOG mal = new MyLinkedListOG();
         mal.add("eins");
         mal.add("zwei");
         mal.add("drei");
         boolean res = mal.remove("zwei");
-        assertTrue(res); 
+        assertTrue(res);
         res = mal.remove("zwei");
         assertFalse(res);
     }
 
-	@Test
+    @Test
     public void testRemoveIndex0() {
-        MyArrayListOG mal = new MyArrayListOG();
+        MyLinkedListOG mal = new MyLinkedListOG();
         mal.add("eins");
         mal.add("zwei");
         mal.add("drei");
@@ -192,9 +192,9 @@ public class MyArrayListOGTest {
         assertEquals(2, mal.size());
     }
 
-	@Test
+    @Test
     public void testRemoveIndexLast() {
-        MyArrayListOG mal = new MyArrayListOG();
+        MyLinkedListOG mal = new MyLinkedListOG();
         mal.add("eins");
         mal.add("zwei");
         mal.add("drei");
@@ -208,9 +208,9 @@ public class MyArrayListOGTest {
         assertEquals(2, mal.size());
     }
 
-	@Test
+    @Test
     public void testContains() {
-        MyArrayListOG mal = new MyArrayListOG();
+        MyLinkedListOG mal = new MyLinkedListOG();
         mal.add("eins");
         assertTrue(mal.contains("eins"));
         assertFalse(mal.contains("zwei"));
@@ -227,17 +227,17 @@ public class MyArrayListOGTest {
 
     @Test
     public void testContains2() {
-        MyArrayListOG mal = new MyArrayListOG();
+        MyLinkedListOG mal = new MyLinkedListOG();
         String s = "ei";
         s += "ns";
         mal.add(s);
         assertTrue(mal.contains("eins"));
         assertFalse(mal.contains("zwei"));
-     }
+    }
 
-	@Test
+    @Test
     public void testClearAndAdd() {
-        MyArrayListOG mal = new MyArrayListOG();
+        MyLinkedListOG mal = new MyLinkedListOG();
         mal.add("eins");
         assertTrue(mal.contains("eins"));
         assertFalse(mal.contains("zwei"));
@@ -248,9 +248,9 @@ public class MyArrayListOGTest {
         assertTrue(mal.contains("eins"));
     }
 
-	@Test
+    @Test
     public void testSet1() {
-        MyArrayListOG mal = new MyArrayListOG();
+        MyLinkedListOG mal = new MyLinkedListOG();
         mal.add("eins");
         mal.add("zwei");
         mal.add("drei");
@@ -265,9 +265,9 @@ public class MyArrayListOGTest {
         assertEquals(3, mal.size());
     }
 
-	@Test
+    @Test
     public void testIndexOf() {
-        MyArrayListOG mal = new MyArrayListOG();
+        MyLinkedListOG mal = new MyLinkedListOG();
         mal.add("eins");
         mal.add("zwei");
         mal.add("drei");
@@ -278,9 +278,9 @@ public class MyArrayListOGTest {
         assertEquals(-1, mal.indexOf("vier"));
     }
 
-	@Test
+    @Test
     public void testLastIndexOf() {
-        MyArrayListOG mal = new MyArrayListOG();
+        MyLinkedListOG mal = new MyLinkedListOG();
         mal.add("eins");
         mal.add("zwei");
         mal.add("drei");
@@ -291,9 +291,9 @@ public class MyArrayListOGTest {
         assertEquals(-1, mal.lastIndexOf("vier"));
     }
 
-	@Test
+    @Test
     public void testManyOperations() {
-        MyArrayListOG mal = new MyArrayListOG();
+        MyLinkedListOG mal = new MyLinkedListOG();
         for (int i = 0; i < 1000; i++) {
             String s = "test" + i;
             mal.add(s);
