@@ -1,9 +1,6 @@
 package Ententeichsimulation;
 
-import Ententeichsimulation.Entenarten.HolzEnte;
-import Ententeichsimulation.Entenarten.LoeffelEnte;
-import Ententeichsimulation.Entenarten.QuietscheEnte;
-import Ententeichsimulation.Entenarten.Stockente;
+import Ententeichsimulation.Entenarten.*;
 import Ententeichsimulation.Flugverhalten.GarNichtFliegen;
 import Ententeichsimulation.Flugverhalten.MitFluegelnFliegen;
 import Ententeichsimulation.Flugverhalten.RaketenFlug;
@@ -50,5 +47,14 @@ public class EntenteichSimulator {
         holzEnte.setQuakVerhalten(new StummSein());
         holzEnte.performQuack();
         holzEnte.swim();
+
+        System.out.println();
+
+        ModellEnte modellEnte = new ModellEnte();
+        modellEnte.display();
+        modellEnte.performQuack();
+        modellEnte.performFly();
+        modellEnte.setFlugVerhalten(new RaketenFlug());
+        modellEnte.performFly();
     }
 }

@@ -1,9 +1,9 @@
 package Ententeichsimulation.Entenarten;
 
 import Ententeichsimulation.Flugverhalten.FlugVerhalten;
-import Ententeichsimulation.Flugverhalten.MitFluegelnFliegen;
+import Ententeichsimulation.Flugverhalten.GarNichtFliegen;
 import Ententeichsimulation.QuakVerhalten.QuakVerhalten;
-import Ententeichsimulation.QuakVerhalten.Quaken;
+import Ententeichsimulation.QuakVerhalten.StummSein;
 
 abstract class Duck implements QuakVerhalten, FlugVerhalten {
 
@@ -11,8 +11,8 @@ abstract class Duck implements QuakVerhalten, FlugVerhalten {
     FlugVerhalten flugVerhalten;
 
     public Duck() {
-        this.flugVerhalten = new MitFluegelnFliegen();
-        this.quakVerhalten = new Quaken();
+        this.flugVerhalten = new GarNichtFliegen();
+        this.quakVerhalten = new StummSein();
     }
 
     public void performQuack() {
