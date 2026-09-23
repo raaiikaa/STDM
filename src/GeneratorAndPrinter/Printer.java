@@ -21,7 +21,7 @@ public class Printer {
     }
 
     public void print2DimIntArray(int[][] array) {
-        String finalString = new String();
+        String finalString = "";
         for (int i = 0; i < array.length; i++) {
             for (int j = 0; j < array[i].length; j++) {
                 finalString += Integer.valueOf(array[i][j]);
@@ -37,6 +37,24 @@ public class Printer {
                 finalString += "  " + Integer.valueOf(array[i][j]);
             }
             System.out.println(finalString);
+            finalString = "";
+        }
+    }
+
+    public void print2DimIntArrayAsSudoku(int[][] array) {
+        String finalString = "";
+        for (int i = 0; i < array.length; i++) {
+            for (int j = 0; j < array[i].length; j++) {
+                if (j == 3 || j == 6) {
+                    finalString += " | " + Integer.valueOf(array[i][j]);
+                } else {
+                    finalString += "  " + Integer.valueOf(array[i][j]);
+                }
+            }
+            System.out.println(finalString);
+            if (i == 2 || i == 5) {
+                System.out.println("-------------------------------");
+            }
             finalString = "";
         }
     }
