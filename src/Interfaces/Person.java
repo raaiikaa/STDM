@@ -1,6 +1,6 @@
 package Interfaces;
 
-public class Person {
+public class Person implements Comparable<Person> {
     String vorname;
     String nachname;
     String middleInitial;
@@ -55,8 +55,8 @@ public class Person {
         this.weight = weight;
     }
 
-//    @Override
-//    public int compareTo(Person o) {
-//        return this.getWeight() - o.getWeight();
-//    }
+    @Override
+    public int compareTo(Person o) {
+        return this.getSize() - o.getSize();
+    }
 }
