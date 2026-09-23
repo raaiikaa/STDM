@@ -1,3 +1,5 @@
+package GeradeUngerade;
+
 public class RekursivGeradeUngerade {
     public static void main(String[] args) {
         System.out.println("5 ist eine gerade Zahl: " + g(5) + " -> genutzte Methode: g(5)");
