@@ -1,6 +1,9 @@
 
 package WeatherData;
 
+import WeatherData.Interfaces.Observer;
+import WeatherData.Interfaces.Subject;
+
 import java.util.ArrayList;
 import java.util.List;
 

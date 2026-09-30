@@ -1,4 +1,4 @@
-package WeatherData;
+package WeatherData.Interfaces;
 
 public interface Subject {
     void registerObserver(Observer observer);

@@ -1,6 +1,6 @@
 package WeatherData.Displays;
 
-import WeatherData.Observer;
+import WeatherData.Interfaces.Observer;
 
 public class StatisticsDisplay implements Observer {
 
