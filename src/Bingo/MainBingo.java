@@ -13,9 +13,9 @@ public class MainBingo {
         spielkarte3.erstelleRandomSpielkarte("spieler3");
 
         int anzahlZuZiehendeNummern = 70;
-        int anzahlNummernImZiehungsgerät = 75;
+        int anzahlNummernImZiehungsgeraet = 75;
 
-        spielleiter.stelleZiehungsgeraetMitAnzahlAuf(anzahlNummernImZiehungsgerät);
+        spielleiter.stelleZiehungsgeraetMitAnzahlAuf(anzahlNummernImZiehungsgeraet);
 
         for (int i = 0; i < anzahlZuZiehendeNummern; i++) {
             int gezogeneNummer = spielleiter.zieheNummerUndLeseVor();
