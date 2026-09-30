@@ -10,10 +10,15 @@ public class WeatherStation {
     public static void main(String[] args) {
         WeatherDataPhase2 weatherData = new WeatherDataPhase2();
 
-        weatherData.registerObserver(new CurrentConditionsDisplay());
-        weatherData.registerObserver(new StatisticsDisplay());
-        weatherData.registerObserver(new ForecastDisplay());
-        weatherData.registerObserver(new WarnungDisplay());
+        CurrentConditionsDisplay currentConditionsDisplay = new CurrentConditionsDisplay();
+        StatisticsDisplay statisticsDisplay = new StatisticsDisplay();
+        ForecastDisplay forecastDisplay = new ForecastDisplay();
+        WarnungDisplay warnungDisplay = new WarnungDisplay();
+
+        weatherData.registerObserver(currentConditionsDisplay);
+        weatherData.registerObserver(statisticsDisplay);
+        weatherData.registerObserver(forecastDisplay);
+        weatherData.registerObserver(warnungDisplay);
 
         changeMeasurementsAndNotifyObservers(weatherData, -1.0, 65, 1013);
         changeMeasurementsAndNotifyObservers(weatherData, 23.0, 60, 1010);
