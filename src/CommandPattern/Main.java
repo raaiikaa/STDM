@@ -15,17 +15,15 @@ public class Main {
         final Rolladen rolladen = new Rolladen();
 
         final LichtAnCommand lichtAnCommand = new LichtAnCommand(lampe);
-        fernbedienung.setCommand(lichtAnCommand);
-        fernbedienung.tasteDruecken();
+        fernbedienung.setCommand("1", lichtAnCommand);
+        fernbedienung.tasteDruecken("1");
 
         final LichtAusCommand lichtAusCommand = new LichtAusCommand(lampe);
-        fernbedienung.setCommand(lichtAusCommand);
-        fernbedienung.tasteDruecken();
+        fernbedienung.setCommand("2", lichtAusCommand);
+        fernbedienung.tasteDruecken("2");
 
         final RolladenRunterCommand rolladenRunterCommand = new RolladenRunterCommand(rolladen);
-        fernbedienung.setCommand(rolladenRunterCommand);
-        fernbedienung.tasteDruecken();
-
-
+        fernbedienung.setCommand("3", rolladenRunterCommand);
+        fernbedienung.tasteDruecken("3");
     }
 }
